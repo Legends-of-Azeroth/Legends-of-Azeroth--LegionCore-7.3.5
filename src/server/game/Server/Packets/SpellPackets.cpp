@@ -485,8 +485,8 @@ ByteBuffer& operator<<(ByteBuffer& data, WorldPackets::Spells::SpellHealPredicti
 
 ByteBuffer& operator<<(ByteBuffer& data, WorldPackets::Spells::SpellCastData const& spellCastData)
 {
-    data << spellCastData.CasterUnit;
     data << spellCastData.CasterGUID;
+    data << spellCastData.CasterUnit;
     data << spellCastData.CastGuid;
     data << spellCastData.CastGuid2;
 
@@ -1028,8 +1028,8 @@ WorldPacket const* WorldPackets::Spells::PlaySpellVisualKit::Write()
 {
     _worldPacket << Unit;
     _worldPacket << KitType;
-    _worldPacket << Duration;
     _worldPacket << KitRecID;
+    _worldPacket << Duration;
 
     return &_worldPacket;
 }
